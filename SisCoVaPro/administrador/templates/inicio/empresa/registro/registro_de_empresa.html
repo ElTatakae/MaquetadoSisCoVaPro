@@ -1,0 +1,179 @@
+{% extends 'panel/panel_administrador.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Registro de empresa</title>
+</head>
+{% block content %}
+    <body>
+    <div id="layoutAuthentication">
+        <div id="layoutAuthentication_content">
+            <main>
+                <div class="container-xl px-4 mb-5">
+                    <div class="row justify-content-center">
+                        <!-- Create Organization-->
+                        <div class="col-xl-8 col-lg-9 col-md-10 col-sm-11">
+                            <div class="card mt-5">
+                                <div class="card-body p-5 text-center">
+                                    <div class="icons-org-create align-items-center mx-auto">
+                                        <i class="fas fa-building fa-3x"></i>
+                                        <!-- Nuevo icono para representar una empresa -->
+                                    </div>
+                                    <div class="h3 text-primary">Información de la empresa</div>
+                                </div>
+                                <hr class="m-0"/>
+                                <div class="card-body p-5">
+                                    <form method="post" action="{% url 'administrador:registro_empresa' %}">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-0 text-center">
+                                                    Nombre de la empresa
+                                                </div>
+                                                <p></p>
+                                                <div class="mb-3">
+                                                    <input class="form-control form-control-solid" type="text"
+                                                           placeholder="Introduce el nombre de la empresa"
+                                                           aria-label="Organization Name"
+                                                           aria-describedby="orgNameExample" required/>
+                                                </div>
+
+                                                <div class="mb-0 text-center">
+                                                    Logotipo
+                                                </div>
+                                                <p></p>
+                                                <div class="mb-3">
+                                                    <input class="form-control form-control-solid" type="file"
+                                                           placeholder="name@example.com" aria-label="Add User"
+                                                           aria-describedby="addUser" accept="image/png, image/jpeg"
+                                                           required/>
+                                                </div>
+
+                                                <div class="mb-0 text-center">
+                                                    Misión
+                                                </div>
+                                                <textarea class="form-control" rows="3" placeholder="Enter ..."
+                                                          data-listener-added_012372b5="true"></textarea>
+
+                                                <div class="mb-0 text-center">
+                                                    Visión
+                                                </div>
+                                                <textarea class="form-control" rows="3" placeholder="Enter ..."
+                                                          data-listener-added_012372b5="true" required></textarea>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="mb-0 text-center">
+                                                    Dirección
+                                                </div>
+                                                <p></p>
+                                                <div class="mb-3">
+                                                    <input class="form-control form-control-solid" type="text"
+                                                           placeholder="Introduce la dirección de la empresa"
+                                                           aria-label="Address" aria-describedby="addressExample"
+                                                           required/>
+                                                </div>
+
+                                                <div class="mb-0 text-center">
+                                                    Correo Electrónico
+                                                </div>
+                                                <p></p>
+                                                <div class="mb-3">
+                                                    <input class="form-control form-control-solid" type="email"
+                                                           placeholder="name@example.com" aria-label="Email"
+                                                           aria-describedby="emailExample" required/>
+                                                </div>
+
+                                                <div class="mb-0 text-center">
+                                                    Teléfono
+                                                </div>
+                                                <p></p>
+                                                <div class="mb-3">
+                                                    <input class="form-control form-control-solid" type="tel"
+                                                           placeholder="Ingrese el número de teléfono"
+                                                           aria-label="Phone" aria-describedby="phoneExample" required/>
+                                                </div>
+
+                                                <div class="mb-0 text-center">
+                                                    Giro de la empresa
+                                                </div>
+                                                <p></p>
+                                                <div class="mb-3">
+                                                    <input class="form-control form-control-solid" type="text"
+                                                           placeholder="Introduce el giro de la empresa"
+                                                           aria-label="Business Type"
+                                                           aria-describedby="businessTypeExample" required/>
+                                                </div>
+
+                                                <div class="mb-0 text-center">
+                                                    Políticas de la empresa
+                                                </div>
+                                                <textarea class="form-control" rows="3" placeholder="Enter ..."
+                                                          data-listener-added_012372b5="true" required></textarea>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="card-footer d-flex align-items-center justify-content-between mt-4 mb-0 w-100">
+                                    <a class="btn btn-outline-danger" style="width: 140px;"
+                                       href="{% url 'administrador:inicio_administrador' %}">Cancelar</a>
+                                    <a class="btn btn-outline-primary" style="width: 140px;"
+                                       href="{% url 'administrador:registro_empresa' %}">Registrar</a>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    </body>
+
+{% endblock %}
+
+<!-- Retirando scripts de plantillas funciona el extends de base.html-->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Obtén el formulario
+        var form = document.querySelector('form');
+
+        // Agrega un evento keydown al formulario
+        form.addEventListener('keydown', function (event) {
+            // Verifica si la tecla presionada es Enter (código 13)
+            if (event.key === 'Enter' || event.keyCode === 13) {
+                // Evita el comportamiento predeterminado del Enter en el formulario
+                event.preventDefault();
+
+                // Encuentra el campo actual que tiene el foco
+                var activeElement = document.activeElement;
+
+                // Encuentra el siguiente campo (puede ser de texto o carga de archivos)
+                var nextField = getNextField(activeElement);
+
+                // Establece el foco en el siguiente campo
+                if (nextField) {
+                    nextField.focus();
+                }
+            }
+        });
+
+        // Función para encontrar el siguiente campo
+        function getNextField(currentField) {
+            // Encuentra todos los campos de texto e input en el formulario
+            var allFields = Array.from(form.querySelectorAll('input[type="text"], input[type="file"]'));
+
+            // Encuentra el índice del campo actual
+            var currentIndex = allFields.indexOf(currentField);
+
+            // Obtiene el siguiente campo (manejando el ciclo al final del formulario)
+            var nextIndex = (currentIndex + 1) % allFields.length;
+
+            // Devuelve el siguiente campo
+            return allFields[nextIndex];
+        }
+    });
+</script>
+</html>

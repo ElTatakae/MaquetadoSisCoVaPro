@@ -1,0 +1,108 @@
+{% extends 'panel/panel_lider.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    {% block title %}
+    Lider
+    {% endblock %}
+  </head>
+  <body>
+    {% block content %}
+      <div class="container-xl px-4 mt-10">
+        <div class="row justify-content-center">
+          <div class="col-xl-4 mb-4 align-content-center">
+            <!-- Dashboard example card 2 -->
+            <a class="card lift h-100" href="{% url 'lider:registroDeLideresYOperadores' %}">
+              <div class="card-body d-flex justify-content-center flex-column">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="me-3">
+                    <h5>Usuarios</h5>
+                    <div class="text-muted small">Añadir a más lideres y operadores</div>
+                  </div>
+                  <i class="feather-xl text-secondary mb-3" data-feather="user-plus"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-xl-4 mb-4 align-content-center">
+            <!-- Dashboard example card 3 -->
+            <a class="card lift h-100" href="{% url 'lider:producto' %}">
+              <div class="card-body d-flex justify-content-center flex-column">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="me-3">
+                    <h5>Productos</h5>
+                    <div class="text-muted small">Cree y liste productos</div>
+                  </div>
+                  <i class="feather-xl text-green mb-3" data-feather="box"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-xl-4 mb-4 align-content-center">
+            <!-- Dashboard example card 3 -->
+            <a class="card lift h-100" href="{% url 'lider:monitoreo'%}">
+              <div class="card-body d-flex justify-content-center flex-column">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="me-3">
+                    <h5>Monitoreos</h5>
+                    <div class="text-muted small">Registrar monitoreo</div>
+                  </div>
+                  <i class="feather-xl text-green mb-3" data-feather="activity"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-xl-4 mb-4 align-content-center">
+            <a class="card lift h-100" href="{% url 'lider:asignar_estandar_equipo' %}">
+              <div class="card-body d-flex justify-content-center flex-column">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="me-3">
+                    <h5>Equipos</h5>
+                    <div class="text-muted small">Asigne y modifique estándares de equipo</div>
+                  </div>
+                  <i class="feather-xl text-secondary mb-3" data-feather="tool"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-xl-4 mb-4 align-content-center">
+            <!-- Dashboard example card 2 -->
+            <a class="card lift h-100" href="{% url 'lider:estadistico' %}">
+              <div class="card-body d-flex justify-content-center flex-column">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="me-3">
+                    <h5>Estadísticos</h5>
+                    <div class="text-muted small">Visualizar estadisticos</div>
+                  </div>
+                  <i class="feather-xl text-secondary mb-3" data-feather="bar-chart"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-xl-4 mb-4 align-content-center">
+            <!-- Dashboard example card 2 -->
+            <a class="card lift h-100" href="{% url 'lider:variable' %}">
+              <div class="card-body d-flex justify-content-center flex-column">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="me-3">
+                    <h5>Variables</h5>
+                    <div class="text-muted small">Liste, cree y edite variables</div>
+                  </div>
+                  <i class="feather-xl text-secondary mb-3" data-feather="droplet"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+  </body>
+</html>

@@ -38,9 +38,11 @@ INSTALLED_APPS = [
     'ingreso.apps.IngresoConfig',
     'administrador',
     'operador',
-    'lider',
+    'materia_prima',
     'crispy_forms',
     'crispy_bootstrap4',
+    'producto_distribuido',
+    'producto_en_proceso',
 ]
 
 MIDDLEWARE = [
@@ -79,8 +81,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'db',
+        'USER': 'postgres',
+        'PASSWORD': 'Admin1234',
+        'HOST': 'localhost',  
+        'PORT': '5432', 
     }
 }
 
@@ -105,9 +111,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'es'
+LANGUAGE_CODE = 'es-MX'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Mexico_City'
 
 USE_I18N = True
 
@@ -132,4 +138,4 @@ CRISPY_ALLOED_TEMPLATED_PACK = "bootstrap4"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-LOGIN_REDIRECT_URL = 'lider:inicio_lider'
+LOGIN_REDIRECT_URL = 'materia_prima:inicio'

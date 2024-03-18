@@ -16,4 +16,4 @@ class InicioView(TemplateView):
 class CustomLoginView(LoginView):
     template_name = 'registration/login.html'
     form_class = LoginForm
-    success_url = reverse_lazy('lider:inicio_lider')
+    success_url = reverse_lazy('materia_prima:inicio')

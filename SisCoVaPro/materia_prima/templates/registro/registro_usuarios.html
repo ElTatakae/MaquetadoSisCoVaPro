@@ -1,0 +1,159 @@
+{% extends "panel/panel_lider.html" %}
+{% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        {% block title %}
+        Registro de usuarios
+        {% endblock %}
+    </head>
+    <header>
+    </header>
+{% block content %}
+    <body>
+    <div class="container-md px-15 mb-10" style="max-width: 800px; ">
+        <div class="card shadow-lg border-0 rounded-lg mt-5">
+            <div class="card-header text-center">
+                <h3 class="fw-light my-4 h3 text-secondary"><i class="fas fa-user"></i> Registro de usuarios</h3>
+            </div>
+            <div class="card-body">
+                <!-- Django Form -->
+                <form action="{% url 'lider:registroDeLideresYOperadores' %}" method="post">
+                    {% csrf_token %}
+                    <!-- Form Group (nombre) -->
+                    <div class="mb-3 d-flex justify-content-center flex-column">
+                        <label class="small mb-1 text-center" for="foto">Foto de perfil</label>
+                        <div class="mb-3">
+                            <input class="form-control form-control-solid mx-auto w-75" type="file"
+                                   placeholder="name@example.com" aria-label="Add User"
+                                   aria-describedby="addUser" accept="image/png, image/jpeg"
+                                   required/>
+                        </div>
+
+                        <div class="mb-3 d-flex justify-content-center flex-column">
+                            <label class="small mb-1 text-center" for="empresa">Empresa</label>
+                            <div class="mb-3">
+                            <input type="text" class="form-control form-control-solid mx-auto w-75" id="empresa"
+                                   name="nombreVariable" value="Liconsa S.A de C.V." disabled>
+                        </div>
+                        <div class="mb-3 d-flex justify-content-center flex-column">
+                            <label class="small mb-1 text-center" for="nombre">Nombre:</label>
+                            <input class="form-control w-75 mx-auto" type="text" id="nombre" name="nombre"
+                                   placeholder="Introduce el nombre completo" required>
+                        </div>
+                        <!-- Form Group (apellido_paterno) -->
+                        <div class="mb-3 d-flex justify-content-center flex-column ">
+                            <label class="small mb-1 text-center" for="apellido_paterno">Apellido Paterno:</label>
+                            <input class="form-control w-75 mx-auto" type="text" id="apellido_paterno"
+                                   name="apellido_paterno" placeholder="Introduce el apellido Paterno" required>
+                        </div>
+                        <!-- Form Group (apellido_materno) -->
+                        <div class="mb-3 d-flex justify-content-center flex-column">
+                            <label class="small mb-1 text-center" for="ape text-centerllido_materno">Apellido
+                                Materno:</label>
+                            <input class="form-control w-75 mx-auto" type="text" id="apellido_materno"
+                                   name="apellido_materno" placeholder="Introduce el apellido Materno" required>
+                        </div>
+                        <!-- Form Group (numero empleado) -->
+                        <div class="mb-3 d-flex justify-content-center flex-column">
+                            <label class="small mb-1 text-center" for="numero_empleado">Número de empleado:</label>
+                            <input class="form-control w-75 mx-auto" type="text" id="numero_empleado"
+                                   name="numero_empleado"
+                                   placeholder="Asigna el numero de empleado" required>
+                        </div>
+                        <!-- Form Group (tipo_empleado) -->
+                        <div class="mb-3 d-flex justify-content-center flex-column ">
+                            <label class="small mb-1 text-center" for="tipo_empleado">Tipo de empleado:</label>
+                            <select class="form-control  w-75 mx-auto" id="tipo_empleado" name="tipo_empleado" required>
+                                <option value="">Selecciona el tipo de empleado</option>
+                                <option value="lider">Líder</option>
+                                <option value="operador">Operador</option>
+                            </select>
+                        </div>
+                        <!-- Form Group (password) -->
+                        <div class="mb-3 d-flex justify-content-center flex-column">
+                            <label class="small mb-1 text-center" for="password">Contraseña:</label>
+                            <input class="form-control w-75 mx-auto" type="password" id="password" name="password"
+                                   required>
+                        </div>
+                        <!-- Form Group (password_repeat) -->
+                        <div class="mb-3 d-flex justify-content-center flex-column">
+                            <label class="small mb-1 text-center" for="password_repeat">Confirma la Contraseña:</label>
+                            <input class="form-control w-75 mx-auto" type="password" id="password_repeat"
+                                   name="password_repeat" required>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex  justify-content-between mt-4 mb-0 w-100 ">
+                        <a class="btn  btn-outline-danger" href="{% url 'lider:inicio_lider' %}">Cancelar</a>
+                        <input class="btn btn-outline-primary" type="submit" value="Registrar">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </body>
+
+{% endblock %}
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var passwordInput = document.getElementById('password');
+        var passwordRepeatInput = document.getElementById('password_repeat');
+        var togglePasswordButton = document.getElementById('togglePassword');
+        var togglePasswordRepeatButton = document.getElementById('togglePasswordRepeat');
+        var passwordInputType = 'password';
+        var passwordRepeatInputType = 'password';
+        togglePasswordButton.addEventListener('click', function () {
+            passwordInputType = togglePasswordVisibility(passwordInput, passwordInputType);
+        });
+
+        togglePasswordRepeatButton.addEventListener('click', function () {
+            passwordRepeatInputType = togglePasswordVisibility(passwordRepeatInput, passwordRepeatInputType);
+        });
+
+        passwordInput.addEventListener('focus', function () {
+            passwordInput.setAttribute('type', passwordInputType);
+        });
+
+        passwordRepeatInput.addEventListener('focus', function () {
+            passwordRepeatInput.setAttribute('type', passwordRepeatInputType);
+        });
+
+        passwordInput.addEventListener('input', function () {
+            updateVisibilityToggle(passwordInput, passwordInputType);
+        });
+
+        passwordRepeatInput.addEventListener('input', function () {
+            updateVisibilityToggle(passwordRepeatInput, passwordRepeatInputType);
+        });
+
+        function togglePasswordVisibility(inputElement, currentType) {
+            var type = currentType === 'password' ? 'text' : 'password';
+            inputElement.setAttribute('type', type);
+            return type;
+        }
+
+        function updateVisibilityToggle(inputElement, currentType) {
+            var type = inputElement.getAttribute('type');
+            if (type !== currentType) {
+                togglePasswordVisibility(inputElement, currentType);
+            }
+        }
+    });
+</script>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function (event) {
+        var nombreInput = document.getElementById('nombre');
+        if (nombreInput.value === '') {
+            event.preventDefault(); // Evita que el formulario se envíe
+            nombreInput.setCustomValidity('Rellena este campo'); // Establece el mensaje de error
+        } else {
+            nombreInput.setCustomValidity(''); // Limpia el mensaje de error si el campo ya no está vacío
+        }
+    });
+</script>
+</html>

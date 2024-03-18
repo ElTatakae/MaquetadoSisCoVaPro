@@ -1,0 +1,77 @@
+{% extends 'panel/panel_lider.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    {% block title %}
+    Variables
+    {% endblock %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/global.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/select2.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+{% block content %}
+    <div class="container-md mt-5 w-50  mb-10" style="width: 800px;">
+        <div class="card card-primary">
+            <div class="row">
+                <div class="card-header text-center"
+                     style="display: flex; align-items: center; justify-content: center">
+                    <h3 class="card-title"><i data-feather="droplet" style="margin-right: 10px;"></i>Registrar Variable
+                    </h3>
+                </div>
+                <!-- SELECT2 EXAMPLE -->
+                <form method="post" action="">
+                    <div class="form-group">
+                        {% csrf_token %}
+                        <div class="card-body">
+                            <div class="row justify-content-center">
+                                <div class="row">
+                                    <div class="col-md-6 mt-3 mb- w-100 ">
+                                        <label class="mb-1 mt-3" for="nombreVariable">Empresa</label>
+                                        <input type="text" class="form-control " id="nombreVariable"
+                                               name="nombreVariable" value="Liconsa S.A de C.V." disabled>
+                                    </div>
+                                    <div class="col-md-6 mt-3 mb- w-100 ">
+                                        <label class="mb-1 mt-3" for="nombreVariable">Nombre de la variable</label>
+                                        <input type="text" class="form-control " id="nombreVariable"
+                                               name="nombreVariable"
+                                               placeholder="Introduce el nombre de la variable">
+                                        <!--name="nombreProducto es el valor que se envia "-->
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mt-3 mb- w-100 ">
+                                        <label class="mb-1 mt-3" for="descripcionVariable">Descripción de la
+                                            variable</label>
+                                        <textarea class="form-control" id="descripcionVariable"
+                                                  name="descripcionVariable"
+                                                  placeholder="Introduce la descripcion del equipo"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Date and time range -->
+
+
+                        <!-- /.footer -->
+                        <div class="d-flex card-footer justify-content-between">
+                            <a type="submit" class="btn btn-outline-danger w-auto"
+                               href="{% url 'lider:inicio_lider' %}">Cancelar</a>
+                            <button type="submit" class="btn btn-outline-primary">Guardar</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        </form>
+    </div>
+    </div>
+    </div>
+{% endblock %}
+</body>
+<footer>
+</footer>
+
+</html>

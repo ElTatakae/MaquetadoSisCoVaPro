@@ -186,3 +186,17 @@ display: none;
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
 
+.columnLogin{
+  column-count: 2;
+}
+.logo-container {
+    display: flex;
+    justify-content: center !important; /* Aligns the logo to the start of the container */
+    align-items: center !important; /* Centers the logo vertically */
+}
+
+.logo {
+    width: 350px; /* Adjust this value to change the size of the logo */
+    height: auto; /* Keeps the aspect ratio of the logo */
+    border-radius: 50%;
+}

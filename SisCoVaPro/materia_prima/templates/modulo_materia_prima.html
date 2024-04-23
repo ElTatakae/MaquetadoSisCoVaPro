@@ -7,12 +7,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     {% block title %}
-    Materia Prima
+      Materia Prima
     {% endblock %}
   </head>
+  {% block content %}    
   <body>
-    {% block content %}
-      <div class="container-xl px-4 mt-10">
+    
+      <!-- Main page content-->
+      <div class="container-xl px-4 mt-3">
+        <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
+          <div class="container-xl px-4">
+            <div class="page-header-content">
+              <div class="row align-items-center justify-content-between pt-3">
+                <div class="col-auto mb-3">
+                  <h1 class="page-header-title">
+                    <div class="page-header-icon">
+                    </div>Menú principal
+                  </h1>
+                </div>
+                <div class="col-12 col-xl-auto mb-3">
+                  <button class="btn btn-sm btn-light text-primary active me-2">Today</button>
+                  <button class="btn btn-sm btn-light text-primary me-2">Month</button>
+                  <button class="btn btn-sm btn-light text-primary">Year</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
         <div class="row justify-content-center">
           <div class="col-xl-4 mb-4 align-content-center">
             <!-- Dashboard example card 2 -->
@@ -28,7 +49,6 @@
               </div>
             </a>
           </div>
-
           <div class="col-xl-4 mb-4 align-content-center">
             <!-- Dashboard example card 3 -->
             <a class="card lift h-100" href="#">
@@ -43,8 +63,6 @@
               </div>
             </a>
           </div>
-
-         
           <div class="col-xl-4 mb-4 align-content-center">
             <!-- Dashboard example card 2 -->
             <a class="card lift h-100" href="#">
@@ -59,8 +77,23 @@
               </div>
             </a>
           </div>
+          <div class="col-xl-4 mb-4 align-content-center">
+            <!-- Dashboard example card 2 -->
+            <a class="card lift h-100" href="#">
+              <div class="card-body d-flex justify-content-center flex-column">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="me-3">
+                    <h5>Reportes</h5>
+                    <div class="text-muted small">Reportes diarios , semanales, mensuales y anuales</div>
+                  </div>
+                  <i class="feather-xl text-secondary mb-3" data-feather="flag"></i>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
-    {% endblock %}
+    </main>
   </body>
+    {% endblock %}
 </html>

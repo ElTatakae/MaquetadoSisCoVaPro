@@ -1,6 +1,5 @@
 from django.urls import path
 from . import views
-from django.views.generic import TemplateView
 from .views import MateriaPrimaView, crearGrupoView, procesosView, productoView, monitoreoView, \
     asignarVariableView, asignarEstandarEquipoView, variableView, RecepcionMateriaPrimaView
 

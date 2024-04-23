@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap4',
     'producto_distribuido',
     'producto_en_proceso',
+    'control_de_calidad',
 ]
 
 MIDDLEWARE = [

@@ -1,12 +1,12 @@
 from django.urls import path
 from . import views
-from .views import MateriaPrimaView, crearGrupoView, procesosView, productoView, monitoreoView, \
-    asignarVariableView, asignarEstandarEquipoView, variableView, RecepcionMateriaPrimaView
+from .views import homeView, crearGrupoView, procesosView, productoView, monitoreoView, \
+    asignarVariableView, asignarEstandarEquipoView, variableView, RecepcionMateriaPrimaView, InicioControlCalidadView, MateriaPrimaAlmacenView
 
 app_name = 'materia_prima'
 
 urlpatterns = [
-    path('inicio/', MateriaPrimaView.as_view(), name='inicio'),
+    path('inicio/', homeView.as_view(), name='home'),
     path('crear_grupo/', crearGrupoView.as_view(), name='crear_grupo'),
     path('procesos/', procesosView.as_view(), name='procesos'),
     path('registro_usuarios/', views.registroDeLideresYOperadoresView.as_view(),
@@ -23,4 +23,6 @@ urlpatterns = [
     # Para el gráfico prueba de la vista
     path('get_chart/', views.get_chart, name='get_chart'),
     path('recepcion/', RecepcionMateriaPrimaView.as_view(), name='recepcion_materia_prima'),
+    path('control_de_calidad/', InicioControlCalidadView.as_view(), name='control_de_calidad'),
+    path('almacenamiento/', MateriaPrimaAlmacenView.as_view(), name='almacenamieno'),
 ]

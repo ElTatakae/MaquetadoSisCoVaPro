@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'crispy_bootstrap4',
     'producto_distribuido',
     'producto_en_proceso',
-    'control_de_calidad',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +61,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # Agregamos la ruta de la carpeta templates
-        'DIRS': [os.path.join(BASE_DIR, 'SCVP2/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,10 +119,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+
+    os.path.join(BASE_DIR, 'static'),
 ]
 
 # Default primary key field type
@@ -135,4 +135,4 @@ CRISPY_ALLOED_TEMPLATED_PACK = "bootstrap4"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-LOGIN_REDIRECT_URL = 'materia_prima:inicio'
+LOGIN_REDIRECT_URL = 'materia_prima:home'

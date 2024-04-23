@@ -6,9 +6,9 @@ from django.http import JsonResponse
 from random import randrange
 
 
-class MateriaPrimaView(LoginRequiredMixin, View):
+class homeView(LoginRequiredMixin, View):
     """__Resumen de MateriaPrimaView__:
-     
+
     Esta clase se encarga de renderizar la pagina de modulo_materia_prima.html, la cual
     contiene la vista de la pagina principal del modulo de materia prima, esta clase
     hereda de la clase View de Django y de la clase LoginRequiredMixin de Django, la cual
@@ -19,11 +19,10 @@ class MateriaPrimaView(LoginRequiredMixin, View):
     redirect_field_name = '/login/'
 
     def get(self, request):
-        return render(request, 'modulo_materia_prima.html')
+        return render(request, 'home.html')
 
 
 class crearGrupoView(TemplateView):
-    #atributo que contiene la ruta del template
     template_name = 'grupo/crear_grupo.html'
 
     def post(self, request, *args, **kwargs):
@@ -61,17 +60,17 @@ class monitoreoView(TemplateView):
 def estadistico(request):
     return render(request, 'estadistico/estadistico.html')
 
+
 def get_chart(_request):
     """__Resumen de get_chart__:
-    
+
     Esta funcion se encarga de generar un grafico de lineas con datos aleatorios, se generan
     6 datos aleatorios y se asignan a los dias de la semana, se genera un color aleatorio para
     el grafico, se retorna un objeto JSON con la informacion del grafico.
-    
     """
 
     colors = ['red', 'blue', 'green', 'yellow', 'black', 'orange']
-    randomColor=colors[randrange(0, (len(colors)-1))];
+    randomColor = colors[randrange(0, (len(colors)-1))]
     serie = []
     counter = 0
     while (counter < 6):
@@ -130,8 +129,23 @@ class variableView(TemplateView):
     def post(self, request, *args, **kwargs):
         return super().get(request, *args, **kwargs)
 
+
 class RecepcionMateriaPrimaView(TemplateView):
     template_name = 'recepcion_materia_prima/recepcion.html'
+
+    def post(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+
+
+class InicioControlCalidadView(TemplateView):
+    template_name = 'control_de_calidad/inicio_calidad.html'
+
+    def post(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+
+
+class MateriaPrimaAlmacenView(TemplateView):
+    template_name = 'almacenamiento/mateira_prima_almacen.html'
 
     def post(self, request, *args, **kwargs):
         return super().get(request, *args, **kwargs)

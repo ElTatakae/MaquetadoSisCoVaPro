@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from random import randrange
 
 
-class homeView(LoginRequiredMixin, View):
+class VistaHome(LoginRequiredMixin, View):
     """__Resumen de MateriaPrimaView__:
 
     Esta clase se encarga de renderizar la pagina de modulo_materia_prima.html, la cual
@@ -137,7 +137,7 @@ class RecepcionMateriaPrimaView(TemplateView):
         return super().get(request, *args, **kwargs)
 
 
-class InicioControlCalidadView(TemplateView):
+class ControlCalidadView(TemplateView):
     template_name = 'control_de_calidad/inicio_calidad.html'
 
     def post(self, request, *args, **kwargs):

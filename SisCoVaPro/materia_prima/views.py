@@ -136,14 +136,12 @@ class RecepcionMateriaPrimaView(TemplateView):
     def post(self, request, *args, **kwargs):
         return super().get(request, *args, **kwargs)
 
-
 class ControlCalidadView(TemplateView):
     template_name = 'control_de_calidad/inicio_calidad.html'
-
-    def post(self, request, *args, **kwargs):
-        return super().get(request, *args, **kwargs)
-
-
+    
+    
+    
+    
 class MateriaPrimaAlmacenView(TemplateView):
     template_name = 'almacenamiento/mateira_prima_almacen.html'
 

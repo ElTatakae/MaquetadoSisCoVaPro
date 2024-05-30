@@ -107,7 +107,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="{% static 'img/usericon.png'%}" class="img-circle elevation-2" alt="User Image" style="filter: brightness(0) invert(1);">    
         </div>
         <div class="info md">
           {% if user.is_authenticated %}
@@ -140,112 +140,19 @@
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
+              <i class="nav-icon fas fa-vial"></i>
               <p>
-                Mailbox
+                 Control de calidad de Laboratorio
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inbox</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/mailbox/compose.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Compose</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/mailbox/read-mail.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Read</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
-              <p>
-                Pages
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="pages/examples/invoice.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Invoice</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/profile.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Profile</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/e-commerce.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>E-commerce</p>
-                </a>
-              </li>
-
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-plus-square"></i>
-              <p>
-                Extras
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
+  
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>
-                    Login & Register v1
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="pages/examples/login.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Login v1</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/examples/register.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Register v1</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/examples/forgot-password.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Forgot Password v1</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/examples/recover-password.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Recover Password v1</p>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>
-                    Login & Register v2
+                    Muestrear, analizar y dictaminar
                     <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
@@ -253,50 +160,253 @@
                   <li class="nav-item">
                     <a href="pages/examples/login-v2.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Login v2</p>
+                      <p>Grasas y/o aceites vegetales v2</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="pages/examples/register-v2.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Register v2</p>
+                      <p>Mezcla oloeosa de Vitaminas A+D3</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="pages/examples/forgot-password-v2.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Forgot Password v2</p>
+                      <p>Pre mezclas en polvo de vitaminas y minerales</p>
+                    </a>
+                  </li>
+     
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Leche en polvo F o FS</p>
+                </a>
+              </li>
+ 
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Soluciones valoradas, soluciones TS e indicadores</p>
+                </a>
+              </li>
+ 
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Evaluación sensorial</p>
+                </a>
+              </li>
+ 
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Monitoreo del medio ambiente</p>
+                </a>
+              </li>
+ 
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Limpieza de equipo y manos del personal</p>
+                </a>
+              </li>
+ 
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Calibración y verificación de equipos de laboratorio</p>
+                </a>
+              </li>
+ 
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Verificación de documentos</p>
+                </a>
+              </li>
+ 
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-box"></i>
+              <p>
+                Almacén
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/examples/invoice.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Leche en polvo F o FS</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/examples/invoice.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Leche cruda</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/examples/invoice.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Leche frisia en pipa</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/examples/invoice.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Evaluación del Polietileno</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="nav nav-treeview">
+  
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Materiales auxiliares y de limpieza
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="pages/examples/login-v2.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Solución Alcalina</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="pages/examples/recover-password-v2.html" class="nav-link">
+                    <a href="pages/examples/register-v2.html" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
-                      <p>Recover Password v2</p>
+                      <p>Solución Acida</p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="pages/examples/forgot-password-v2.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Hipoclorito de sodio</p>
+                    </a>
+                  </li>
+     
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-cogs"></i>
+              <p>
+                Producción
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Muestreo y evaluación
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="pages/examples/login-v2.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Producto en Silos</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/examples/register-v2.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Leche fluida-producto a la salida del pasteurizador</p>
+                    </a>
+                  </li>
+       
+
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Producto terminado-leche fluida
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="pages/examples/login-v2.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Leche fluida envase de 1 o 2 litros</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/examples/register-v2.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Verificación de contenido Neto</p>
+                    </a>
+                  </li>
+       
+
                 </ul>
               </li>
               <li class="nav-item">
                 <a href="pages/examples/lockscreen.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Lockscreen</p>
+                  <p>Leche cruda</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/examples/legacy-user-menu.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Legacy User Menu</p>
+                  <p>Leche Frisia en Pipa</p>
                 </a>
               </li>
-
+              <li class="nav-item">
+                <a href="pages/examples/legacy-user-menu.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Concentración de las soluciones y/o materiales de limpieza</p>
+                </a>
+              </li>
+         
+         
 
             </ul>
           </li>
+ 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-search"></i>
+              <i class="nav-icon fas fa-wrench"></i>
               <p>
-                Search
+                Mantenimiento
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -304,18 +414,12 @@
               <li class="nav-item">
                 <a href="pages/search/simple.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Search</p>
+                  <p>Agua para alimentación al proceso</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="pages/search/enhanced.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Enhanced</p>
-                </a>
-              </li>
+
             </ul>
           </li>
-      
        
         </ul>
       </nav>

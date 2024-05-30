@@ -1,0 +1,50 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <title>Ingreso de Usuarios</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/unicons.css'%}">
+    <link rel="stylesheet" href="{% static 'libs/twitter-bootstrap/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
+</head>
+
+<body>
+<div class="container">
+    <div class="row ">
+        <div class="col-md-6 text-center align-self-center py-5">
+            <div class="row full-height justify-content-center">
+                <div class="col-12 text-center align-self-center py-5">
+                    <div class="section pb-5 pt-5 pt-sm-2 text-center">
+                        <div class="card-3d-wrap mx-auto">
+                            <div class="card-front">
+                                <div class="center-wrap">
+                                    <div class="section text-center">
+                                        <h2>Iniciar Sesión</h2>
+                                        <form method="post">
+                                            {% csrf_token %}
+                                            {{ form|crispy }}
+                                            <button type="submit" class="btn mt-2">Login</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-end">
+            <div class="logo-container ">
+                <img src="{% static 'img/logoLiconsa.png' %}" alt="logo" class="logo">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

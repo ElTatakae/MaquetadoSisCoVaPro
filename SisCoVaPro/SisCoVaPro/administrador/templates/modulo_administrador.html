@@ -1,0 +1,78 @@
+{% extends 'panel/panel_administrador.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Inicio de Aministrador</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <link rel="icon" type="image/x-icon" href="static/assets/img/favicon.png"/>
+    <script data-search-pseudo-elements defer
+            src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/all.min.js"
+            crossorigin="anonymous"></script>
+    <script src="{% static 'libs/feather-icons/feather.min.js' %}"
+                    crossorigin="anonymous"></script>
+</head>
+
+{% block content %}
+    <div class="container-xl px-4 mt-10">
+        <div class="container">
+            <div class="row" style="align-content: center">
+                <div class="col-xl-4 mb-4">
+                    <!-- Dashboard example card 3-->
+                    <a class="card lift h-100" href="{% url 'administrador:menu_empresa' %}">
+                        <div class="card-body d-flex justify-content-center flex-column">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="me-3">
+
+                                    <h5>Empresas</h5>
+                                    <div class="text-muted small">Registrar a una empresa para la operación del
+                                        sistema
+                                    </div>
+                                </div>
+                            <i class="fas fa-building fa-3x text-green mb-3"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-xl-4 mb-4">
+                    <!-- Dashboard example card 2-->
+                    <a class="card lift h-100" href="{% url 'administrador:registro_lider' %}">
+                        <div class="card-body d-flex justify-content-center flex-column">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="me-3">
+
+                                    <h5>Líderes de empresa</h5>
+                                    <div class="text-muted small">Registrar cuentas de los líderes de producción</div>
+                                </div>
+                              <i class="fas fa-users fa-3x text-secondary mb-3"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-4 mb-4">
+                    <!-- Dashboard example card 2-->
+                    <a class="card lift h-100" href="{% url 'administrador:registro_de_administrador'%}">
+                        <div class="card-body d-flex justify-content-center flex-column">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="me-3">
+
+                                    <h5>Administradores</h5>
+                                    <div class="text-muted small">Registrar un nuevo administrador</div>
+                                </div>
+                               <i class="fas fa-user-plus fa-3x text-secondary mb-3"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </html>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'panel/panel_administrador.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Crud empresa</title>
+    <link rel="stylesheet" href={% static 'css/global.css' %}>
+</head>
+
+{% block content %}
+    <div class="container-xl px-4 mt-10">
+        <div class="container">
+            <div class="row" style="align-content: left">
+                <div class="col-xl-12 mb-4">
+                    <button class="btn btn-primary " type="button"
+                            onclick="location.href='{% url 'administrador:inicio_administrador' %}'">
+                        Regresar
+                    </button>
+                </div>
+                <div class="row" style="align-content: center">
+                    <div class="col-xl-4 mb-4">
+                        <!-- Dashboard example card 3-->
+                        <a class="card lift h-100" href="{% url 'administrador:registro_empresa' %}">
+                            <div class="card-body d-flex justify-content-center flex-column">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="me-3">
+                                        <h5>Registro de empresa</h5>
+                                        <div class="text-muted small">Registrar una empresas para la operación del
+                                            sistema.
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-plus fa-3x text-green mb-3"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-xl-4 mb-4">
+                        <!-- Dashboard example card 2-->
+                        <a class="card lift h-100" href="#">
+                            <div class="card-body d-flex justify-content-center flex-column">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="me-3">
+                                        <h5>Listado de empresas</h5>
+                                        <div class="text-muted small">Visualizar el listado de empresas</div>
+                                    </div>
+                                    <i class="fas fa-list-alt fa-3x text-secondary mb-3"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xl-4 mb-4">
+                        <!-- Dashboard example card 2-->
+                        <a class="card lift h-100" href="#">
+                            <div class="card-body d-flex justify-content-center flex-column">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class="me-3">
+
+                                        <h5>Modificar</h5>
+                                        <div class="text-muted small">Modificar empresas registradas</div>
+                                    </div>
+                                    <i class="fas fa-edit fa-3x text-secondary mb-3"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </html>
+{% endblock %}

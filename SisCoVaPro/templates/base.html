@@ -45,10 +45,10 @@
 
   {%block preloader%}
   <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
+  <div id="preloader" class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__wobble" src="{% static 'img/loaderLiconsa.png'%}" alt="logoLiconsa" height="60" width="60">
   </div>
-  {%endblock%}
+{%endblock%}
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -58,11 +58,9 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="{% url 'materia_prima:home'%}" class="nav-link">Inicio</a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>
+ 
     </ul>
 
     <!-- Right navbar links -->
@@ -111,9 +109,9 @@
         <div class="image">
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
-        <div class="info">
+        <div class="info md">
           {% if user.is_authenticated %}
-              <a href="#" class="d-block">{{ user.username }}</a>
+              <a href="#" class="d-block">Sesion iniciada <br> cómo: {{ user.username }}</a>
           {% else %}
               <a href="#" class="d-block">Usuario</a>
           {% endif %}
@@ -328,15 +326,15 @@
     <!-- /.sidebar -->
   </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    {% block principal%}
+   <!-- Content Wrapper. Contains page content -->
+   <div class="content-wrapper">
+     {%block principal%}
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0">Panel general</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -932,13 +930,12 @@
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
-    
-    {% endblock%}
+    {%endblock%}
   </div>
   <!-- /.content-wrapper -->
   {% block footer%}
   <footer class="main-footer">
-    <strong>Copyright &copy; 2024 <a href="https://adminlte.io">SisCoVaPro</a>.</strong>
+    <strong>Copyright &copy; 2024 <a href="{% url 'materia_prima:home'%}">SisCoVaPro</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 1.0.0
@@ -955,6 +952,7 @@
 <!-- ./wrapper -->
 {% block javascript%}
 <!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{% static 'js/jquery.min.js'%}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{% static 'js/jquery-ui.min.js'%}"></script>
@@ -963,6 +961,14 @@
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
+<!-- Preloader-->
+<script>
+  window.addEventListener('load', function() {
+      setTimeout(function() {
+          document.getElementById('preloader').style.display = 'none';
+      }, 3000);  // 3000ms = 3s
+  });
+  </script>
 <!-- Bootstrap 4 -->
 <script src="{% static 'js/bootstrap.bundle.min.js'%}"></script>
 <!-- ChartJS -->

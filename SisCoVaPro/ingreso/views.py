@@ -10,10 +10,12 @@ class IngresoAdminView(TemplateView):
     def post(self, request, *args, **kwargs):
         return super().get(request, *args, **kwargs)
 
+
 class InicioView(TemplateView):
     template_name = 'inicio.html'
+
 
 class CustomLoginView(LoginView):
     template_name = 'registration/login.html'
     form_class = LoginForm
-    success_url = reverse_lazy('materia_prima:inicio')
+    success_url = reverse_lazy('materia_prima:home')

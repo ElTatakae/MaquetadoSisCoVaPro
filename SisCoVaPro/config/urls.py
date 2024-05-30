@@ -10,5 +10,4 @@ urlpatterns = [
     path('operador/', include('operador.urls')),
     path('admin/', admin.site.urls),
     path('distribucion/', include('producto_distribuido.urls')),
-    path('control_de_calidad/', include('control_de_calidad.urls')),
 ]
